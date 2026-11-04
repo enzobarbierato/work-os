@@ -1,48 +1,37 @@
 
+import { Routes, Route } from "react-router";
+
 import AppLayout from "./components/layout/AppLayout";
+
+import HomePage from "./features/home/HomePage";
+import BoardsPage from "./features/boards/BoardsPage";
+import WorkspacesPage from "./features/workspaces/WorkspacesPage";
+import DashboardPage from "./features/dashboard/DashboardPage";
 
 function App() {
   return (
-    <AppLayout
-      title="Meu espaço de trabalho"
-      description="Gerencie seus projetos em um só lugar."
-    >
+    <Routes>
+      <Route element={<AppLayout />}>
 
-      <section className="grid gap-5 md:grid-cols-2">
+        <Route index element={<HomePage />} />
 
-        {/* Quadros */}
-        <article className="rounded-xl bg-white p-6 shadow-sm">
+        <Route
+          path="/boards"
+          element={<BoardsPage />}
+        />
 
-          <h2 className="text-lg font-semibold text-ink">
-            Meus quadros
-          </h2>
+        <Route
+          path="/workspaces"
+          element={<WorkspacesPage />}
+        />
 
-          <p className="mt-3 text-sm text-gray-500">
-            Nenhum quadro criado até o momento.
-          </p>
+        <Route
+          path="/dashboard"
+          element={<DashboardPage />}
+        />
 
-          <div className="mt-6 h-2 w-24 rounded bg-brand-blue" />
-
-        </article>
-
-        {/* Tarefas */}
-        <article className="rounded-xl bg-white p-6 shadow-sm">
-
-          <h2 className="text-lg font-semibold text-ink">
-            Minhas tarefas
-          </h2>
-
-          <p className="mt-3 text-sm text-gray-500">
-            Nenhuma tarefa cadastrada.
-          </p>
-
-          <div className="mt-6 h-2 w-24 rounded bg-brand-yellow" />
-
-        </article>
-
-      </section>
-
-    </AppLayout>
+      </Route>
+    </Routes>
   );
 }
 
