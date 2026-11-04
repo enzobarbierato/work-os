@@ -1,54 +1,48 @@
+
+import AppLayout from "./components/layout/AppLayout";
+
 function App() {
   return (
-    <div className="min-h-screen bg-surface">
+    <AppLayout
+      title="Meu espaço de trabalho"
+      description="Gerencie seus projetos em um só lugar."
+    >
 
-      {/* Cabeçalho */}
-      <header className="bg-ink px-8 py-5">
-        <h1 className="text-2xl font-bold text-white">
-          Work OS
-        </h1>
-      </header>
+      <section className="grid gap-5 md:grid-cols-2">
 
-      {/* Conteúdo principal */}
-      <main className="mx-auto max-w-6xl p-8">
+        {/* Quadros */}
+        <article className="rounded-xl bg-white p-6 shadow-sm">
 
-        <h2 className="text-3xl font-bold text-ink">
-          Meu espaço de trabalho
-        </h2>
+          <h2 className="text-lg font-semibold text-ink">
+            Meus quadros
+          </h2>
 
-        <p className="mt-2 text-gray-600">
-          Sua plataforma de gestão de projetos.
-        </p>
+          <p className="mt-3 text-sm text-gray-500">
+            Nenhum quadro criado até o momento.
+          </p>
 
-        <section className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="mt-6 h-2 w-24 rounded bg-brand-blue" />
 
-          <article className="rounded-xl bg-white p-6 shadow-sm">
-            <h3 className="font-semibold text-ink">
-              Meus quadros
-            </h3>
+        </article>
 
-            <p className="mt-2 text-sm text-gray-500">
-              Nenhum quadro criado.
-            </p>
+        {/* Tarefas */}
+        <article className="rounded-xl bg-white p-6 shadow-sm">
 
-            <div className="mt-5 h-2 w-20 rounded bg-brand-blue" />
-          </article>
+          <h2 className="text-lg font-semibold text-ink">
+            Minhas tarefas
+          </h2>
 
-          <article className="rounded-xl bg-white p-6 shadow-sm">
-            <h3 className="font-semibold text-ink">
-              Minhas tarefas
-            </h3>
+          <p className="mt-3 text-sm text-gray-500">
+            Nenhuma tarefa cadastrada.
+          </p>
 
-            <p className="mt-2 text-sm text-gray-500">
-              Nenhuma tarefa cadastrada.
-            </p>
+          <div className="mt-6 h-2 w-24 rounded bg-brand-yellow" />
 
-            <div className="mt-5 h-2 w-20 rounded bg-brand-yellow" />
-          </article>
+        </article>
 
-        </section>
-      </main>
-    </div>
+      </section>
+
+    </AppLayout>
   );
 }
 
